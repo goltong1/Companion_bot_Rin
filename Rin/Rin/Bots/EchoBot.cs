@@ -65,8 +65,12 @@ namespace Rin.Bots
                 */
                 switch (topIntent)
                 {
-                    case "greeting":
+                    case "Greeting":
                         await turnContext.SendActivityAsync(MessageFactory.Text("안녕하세요!"), cancellationToken);
+                        break;
+                    case "Boring":
+                        await turnContext.SendActivityAsync(MessageFactory.Text("음..춤이라도 출까요?"), cancellationToken);
+                        await turnContext.SendActivityAsync(MessageFactory.Text(">-<"), cancellationToken);
                         break;
                     default:
                         await turnContext.SendActivityAsync(MessageFactory.Text("음..잘 모르겠어요!"), cancellationToken);
